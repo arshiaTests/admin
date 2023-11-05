@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="project-touch-icon" sizes="76x76" href="../assets/img/project-icon.png" />
     <link rel="icon" type="image/png" href="../assets/img/project.png" />
+
     <title>Project Grup A</title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -22,11 +23,13 @@
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
-
-
 </head>
 
+
+
+
   <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
+    <a href="dataTransaksi.html"></a>
     <!-- sidenav  -->
     <aside class="max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap 
                 items-center justify-between overflow-y-hidden rounded-2xl border-0 bg-white p-0 antialiased 
@@ -183,7 +186,7 @@
           </li>
     </aside>
 
-    <!-- end sidenav -->
+
 
     <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
         <!-- Navbar -->
@@ -229,10 +232,153 @@
   
         <!-- end Navbar -->
 
+    <!-- end sidenav -->
+    <!-- cards -->
+    <div class="w-full px-6 py-6 mx-auto">
+    <!-- row 1 -->
+    <div class="flex flex-wrap -mx-3">
+    <!-- Bagian Cari Barang -->
+    <div class="w-full max-w-full px-10 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/2 bg-gradient-to-tl from-purple-700 to-pink-500 rounded-2xl">
+      <div class="relative flex flex-col min-w-0 break-words shadow-soft-xl rounded-2xl bg-clip-border">
+      <div class="flex-auto p-4">
+         <p class="mb-6 font-sans font-semibold leading-normal text-sm text-white">Cari Barang <i class="fas fa-search"></i>
+        </p>
+        <div class="flex flex-row -mx-3">
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="searchInput" type="text" placeholder="Kode/nama barang">
+        <!-- Tombol Cari -->
+      </div>
+    </div>
+    </div>
+  </div>
+    <!-- Bagian Hasil Pencarian -->
+    <div class="w-full max-w-full px-10 mb-20 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/2 bg-gradient-to-tl from-purple-700 to-pink-500 rounded-2xl mt-10">
+      <div class="relative flex flex-col min-w-0 break-words shadow-soft-xl rounded-2xl bg-clip-border">
+          <div class="flex-auto p-4">
+              <p class="mb-6 font-sans font-semibold leading-normal text-sm text-white">Hasil Pencarian</p>
+              <div class="flex flex-row -mx-3">
+                  <input class="shadow appearance-none border rounded-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="searchInput" type="text" placeholder="...">
+              </div>
+          </div>
+      </div>
+  </div>
+  
+    </div>
+    </div>
+
+<!-- Bagian Kasir -->
+<div class="btn bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-xl text-white text-sm font-semibold py-2 px-6 ml-3 rounded-2xl">
+  <div class="relative flex flex-col min-w-0 break-words shadow-soft-xl rounded-3xl bg-clip-border">
+      <div class="mb-6 font-sans font-semibold leading-normal text-sm text-white flex items-center">
+          <p class="mb-0 text-xl">Kasir</p>
+          <div class="ml-auto">
+              <button type="submit" class="btn bg-white shadow-soft-2xl text-black text-sm font-semibold py-2 px-6 ml-3 rounded-xl">Reset Keranjang</button>
+          </div>
+      </div>
+      <!-- Tabel -->
+      <style>
+        /* CSS untuk memperpanjang kotak input tanggal */
+        #tanggal {
+            width: 300px; /* Atur lebar sesuai keinginan Anda */
+            padding: 8px; /* Tambahkan padding untuk tampilan yang lebih baik */
+            box-sizing: border-box; /* Pastikan padding tidak menambah lebar total */
+        }
+        /* CSS untuk mengatur warna teks */
+        #tanggal {
+            color: black; /* Atur warna teks menjadi hitam */
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <form>
+        <label for="tanggal">Tanggal:</label>
+        <input type="date" id="tanggal" name="tanggal">
+    </form>
+</div>
+
+<script>
+    function setTanggalOtomatis() {
+        var inputTanggal = document.getElementById("tanggal");
+        var today = new Date();
+
+        // Format tanggal menjadi 'YYYY-MM-DD' (misal: 2023-11-03)
+        var formattedDate = today.getFullYear() + '-' + (today.getMonth() + 1).toString().padStart(2, '0') + '-' + today.getDate().toString().padStart(2, '0');
+
+        inputTanggal.value = formattedDate;
+    }
+
+    // Panggil fungsi untuk mengatur tanggal saat halaman dimuat
+    setTanggalOtomatis();
+</script>
+<div class="w-full px-6 py-6 mx-auto">
+  <!-- table 1 -->
+                    <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500 bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-xl bg-clip-border">
+                        <thead class="align-bottom">
+                            <tr>
+                                <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
+                                <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Nama Barang</th>
+                                <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Jumlah</th>
+                                <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Total</th>
+                                <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Kasir</th>
+                                <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Laptop</td>
+                                <td>3</td>
+                                <td>$3000</td>
+                                <td>John Doe</td>
+                                <td >Signature</td>
+                            </tr>
+                        </tbody>
+
+                        <tfoot class="py-4 bg-purple-700">
+                                  <tr>
+                                      <td class="px-6 py-3 font-extrabold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-purple-700" colspan="2">Total Harga</td>
+                                      <td class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-black opacity-70">
+                                          $150 <!-- Isi dengan total harga dari tabel -->
+                                      </td>
+                                  </tr>
+                          </tfoot>
+                    </table>
+                  </div>
+
+
+                  <div class="w-full px-6 py-0 mx-auto">
+                    <!-- Form untuk menambahkan kategori -->
+                    <form role="form" method="POST" action="#">
+                        <div class="flex flex-wrap -mx-3">
+                            <div class="flex-auto px-6 pt-6">
+                                <!-- Inpust BAyar -->
+                                <div class="mb-4 border-b-2 border-purple-500">
+                                  <p>Bayar</p>
+                                    <input type="text" id="uang" name="Uang" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-700 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" required>
+                                    <!-- Tombol Bayar -->
+                                    <div class="flex items-center justify-end mt-4">
+                                        <button type="submit" class="btn bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl text-white text-sm font-semibold py-2 px-6 ml-3 rounded-xl">Bayar</button>
+                                    </div>
+                                    <p>Kembali</p>
+                                    <input type="text" id="uang" name="Uang" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-700 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" required>
+                                </div>
+                                 
+                                
+                
+                            </div>
+                        </div>
+                    </form>
+                </div>
+    <!-- </div>
+    </div>
+  </div> -->
+  </div>
+
         <!-- form transaksi -->
            
 </body>
-<footer class="fixed bottom-0 inset-x-0 w-full bg-white py-4 text-center text-sm text-slate-500">
+<footer class="fixed bottom-0 inset-x-0 w-full bg-white py-3 text-center text-sm text-slate-500">
   ©
   <script>
       document.write(new Date().getFullYear() + ",");
