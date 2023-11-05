@@ -99,7 +99,6 @@
         </nav>
   
         <!-- end Navbar -->
-
         <div class="w-full px-6 py-6 mx-auto">
             <!-- table 1 -->
         
@@ -107,33 +106,80 @@
               <div class="flex-none w-full max-w-full px-3">
                 <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
                   <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                    <h6>Daftar Table Barang</h6>
+                    <h5>Telah Terjual</h5>
                   </div>
+        
+                  <div class="w-full px-6 py-0 mx-auto">
+                    <!-- Form untuk menambahkan terjual -->
+                    <form role="form" method="POST" action="{{ route('dashboard') }}>
+                        @csrf
+                        <div class="flex flex-wrap -mx-3">
+                            <div class="flex-auto px-6 pt-6">
+                                <!-- Nama Terjual -->
+                                <div class="mb-4 border-b-2 border-purple-500">
+                                    <input type="text" id="Terjual" name="Terjual" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-700 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Barang Terjual" required>
+                                </div>
+        
+                                <!-- Tombol Simpan -->
+                                <div class="flex items-center justify-end mt-4">
+                                    <button type="submit" class="btn bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl text-white text-sm font-semibold py-2 px-6 ml-3 rounded-xl">Simpan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+        
+        
+        
                   <div class="flex-auto px-0 pt-0 pb-2">
                     <div class="p-0 overflow-x-auto">
                       <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
                         <thead class="align-bottom">
-                          <tr>
-                            <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
-                            <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">ID Barang</th>
-                            <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Kategori</th>
-                            <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Nama Barang</th>
-                            <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Merk</th>
-                            <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Stock Barang</th>
-                            <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Harga Beli</th>
-                            <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Harga Jual</th>
-                            <th class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-gray-200 border-solid shadow-none tracking-none whitespace-nowrap text-slate-400 opacity-70">Satuan</th>
-                            <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Aksi</th>
-                          </tr>
-                        </thead>
-        
                             <tr>
-
-                            </tr>
- 
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID Barang</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Barang</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Merk</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stok</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Harga Beli</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Harga Jual</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                              </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                              <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">1</td>
+                                <td class="px-6 py-4 whitespace-nowrap">12345</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Elektronik</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Televisi</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Sony</td>
+                                <td class="px-6 py-4 whitespace-nowrap">50</td>
+                                <td class="px-6 py-4 whitespace-nowrap">500.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap">750.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Unit</td>                                
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">2</td>
+                                <td class="px-6 py-4 whitespace-nowrap">67890</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Pakaian</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Kemeja</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Levi's</td>
+                                <td class="px-6 py-4 whitespace-nowrap">100</td>
+                                <td class="px-6 py-4 whitespace-nowrap">250.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap">450.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Potong</td> 
+                                </td>
+                              </tr>
+                          
+                            </thead>
+                        <tbody>
+                  
                         </tbody>
                     </table>
+              
         
+                    
                     
                   </body>
                   <footer class="fixed bottom-0 inset-x-0 w-full bg-white py-4 text-center text-sm text-slate-500">
@@ -144,7 +190,7 @@
                       made with <i class="fa fa-heart"></i> by
                       <p class="font-semibold text-slate-700">Creative GRUP A</p>
                   </footer>
-                  
+
  <!-- plugin for charts  -->
  <script src="../assets/js/plugins/chartjs.min.js" async></script>
  <!-- plugin for scrollbar  -->
