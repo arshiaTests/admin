@@ -1,0 +1,186 @@
+body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: transparent;
+    color: #000000;
+    padding: 1em 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.add-icon {
+    font-size: 2em;
+    color: #28a745;
+}
+
+.delete-all-icon {
+    font-size: 2em;
+    color: #dc3545;
+}
+
+.buttons button:hover {
+    opacity: 0.8;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.column {
+    width: 30%;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 200px;
+}
+
+
+.column:nth-child(1) {
+    background-color: #d4edda;
+}
+
+.column:nth-child(2) {
+    background-color: #cce5ff;
+}
+
+.column:nth-child(3) {
+    background-color: #ffeeba;
+}
+
+.card {
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: grab;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe; /* White background */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Ensure it doesn't get too wide */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style for modal inputs */
+#card-title,
+#card-description {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style for save card button */
+#save-card-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#save-card-btn:hover {
+    background-color: #367c39;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.card-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.delete-card-btn,
+.edit-card-btn {
+    font-size: 1.2em;
+    color: #777;
+}
+
+.delete-card-btn:hover,
+.edit-card-btn:hover {
+    color: #333;
+}
+
+.delete-card-btn i.fas.fa-trash-alt {
+    color: red;
+}
+
+.edit-card-btn i.fas.fa-edit {
+    color: blue;
+}  
